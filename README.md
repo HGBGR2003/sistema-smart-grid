@@ -11,7 +11,14 @@
 
 <br>
 
-**Autor:** Henrique Gabriel Barbosa Guida Rodrigues  
+**Autores:**  
+Henrique Gabriel Barbosa Guida Rodrigues,  
+Guilherme Meira de Melo,  
+Lara Antonia Marques Oliveira,  
+Philipy Dekam Silva de Oliveira,  
+Vinícius Soares de Melo,  
+Jeanderson Honorato de Souza  
+
 **Instituição:** Instituto Federal Goiano (IF Goiano)  
 **Disciplina:** Linguagem de Programação II (LP2)  
 **Projeto:** Projeto Final - Sistema de Gestão de Smart Grid e Tarifação Ecológica (EcoTarifa)  

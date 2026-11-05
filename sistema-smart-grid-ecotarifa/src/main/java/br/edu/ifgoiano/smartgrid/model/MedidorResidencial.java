@@ -1,5 +1,5 @@
 package br.edu.ifgoiano.smartgrid.model;
 
-public class MedidorResidencial {
+public class MedidorResidencial extends MedidorInteligente implements CalculadoraTarifaria {
     
 }

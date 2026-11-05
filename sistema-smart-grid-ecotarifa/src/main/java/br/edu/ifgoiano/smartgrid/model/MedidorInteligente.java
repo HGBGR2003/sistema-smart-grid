@@ -1,5 +1,7 @@
 package br.edu.ifgoiano.smartgrid.model;
 
-public class MedidorInteligente {
+import java.io.Serializable;
+
+public abstract class MedidorInteligente implements Serializable {
     
 }

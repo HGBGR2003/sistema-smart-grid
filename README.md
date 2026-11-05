@@ -11,9 +11,8 @@
 
 <br>
 
-**Autor:** Henrique Gabriel Barbosa Guida Rodrigues  
-**Instituição:** Instituto Federal Goiano (IF Goiano)  
-**Disciplina:** Linguagem de Programação II (LP2)  
+**Autores:** Henrique Gabriel Barbosa Guida Rodrigues, Guilherme Meira de Melo, Lara Antonia Marques Oliveira, Philipy Dekam Silva de Oliveira, Vinícius Soares de Melo e Jeanderson Honorato de Souza  
+**Disciplina:** Linguagem de Programação II
 **Projeto:** Projeto Final - Sistema de Gestão de Smart Grid e Tarifação Ecológica (EcoTarifa)  
 
 ---
@@ -130,15 +129,6 @@ Ou diretamente executando a classe principal através de sua IDE favorita (abra 
 
 ---
 
-## 📋 Próximas Etapas e Roadmap
-
-- [ ] Implementação de camada de persistência com banco de dados relacional via padrão DAO / JDBC.
-- [ ] Implementação de regras dinâmicas de bandeiras tarifárias (Verde, Amarela, Vermelha) e tarifas horárias (posto tarifário ponta e fora-ponta).
-- [ ] Exportação de relatórios e faturas em arquivos estruturados (JSON / CSV / PDF).
-- [ ] Criação de interface visual para monitoramento do grid elétrico em tempo real.
-
----
-
 ## 📜 Licença
 
-Este projeto é desenvolvido para fins exclusivamente acadêmicos e pedagógicos no âmbito da disciplina de **Linguagem de Programação II** do **Instituto Federal Goiano**.
+Este projeto é desenvolvido para fins exclusivamente acadêmicos e pedagógicos no âmbito da disciplina de **Linguagem de Programação II**.

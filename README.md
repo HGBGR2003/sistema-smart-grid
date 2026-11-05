@@ -10,7 +10,11 @@
 
 <br>
 
-**Autores:** Henrique Gabriel Barbosa Guida Rodrigues, Guilherme Meira de Melo, Lara Antonia Marques Oliveira, Philipy Dekam Silva de Oliveira, Vinícius Soares de Melo e Jeanderson Honorato de Souza
+**Autores:** Henrique Gabriel Barbosa Guida Rodrigues
+             Guilherme Meira de Melo 
+             Lara Antonia Marques Oliveira, 
+             Philipy Dekam Silva de Oliveira, 
+             Vinícius Soares de Melo e Jeanderson Honorato de Souza
 
 ---
 

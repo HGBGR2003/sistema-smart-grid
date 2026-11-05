@@ -5,12 +5,12 @@
   <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow?style=for-the-badge" alt="Status" />
   <img src="https://img.shields.io/badge/Java-25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 25" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven" />
-  <img src="https://img.shields.io/badge/IF_Goiano-Linguagem_de_Programação_II-006633?style=for-the-badge" alt="IF Goiano" />
 
 </div>
 
 <br>
 
+<<<<<<< HEAD
 **Autores:**  
 Henrique Gabriel Barbosa Guida Rodrigues,  
 Guilherme Meira de Melo,  
@@ -21,6 +21,20 @@ Jeanderson Honorato de Souza
 
 **Instituição:** Instituto Federal Goiano (IF Goiano)  
 **Disciplina:** Linguagem de Programação II (LP2)  
+=======
+**Autores:** Henrique Gabriel Barbosa Guida Rodrigues
+             Guilherme Meira de Melo 
+             Lara Antonia Marques Oliveira, 
+             Philipy Dekam Silva de Oliveira, 
+             Vinícius Soares de Melo e Jeanderson Honorato de Souza
+
+---
+
+**Disciplina:** Linguagem de Programação II
+
+---
+
+>>>>>>> a5630c1e1b8449829f17542e9ae711f91796590a
 **Projeto:** Projeto Final - Sistema de Gestão de Smart Grid e Tarifação Ecológica (EcoTarifa)  
 
 ---
@@ -137,15 +151,6 @@ Ou diretamente executando a classe principal através de sua IDE favorita (abra 
 
 ---
 
-## 📋 Próximas Etapas e Roadmap
-
-- [ ] Implementação de camada de persistência com banco de dados relacional via padrão DAO / JDBC.
-- [ ] Implementação de regras dinâmicas de bandeiras tarifárias (Verde, Amarela, Vermelha) e tarifas horárias (posto tarifário ponta e fora-ponta).
-- [ ] Exportação de relatórios e faturas em arquivos estruturados (JSON / CSV / PDF).
-- [ ] Criação de interface visual para monitoramento do grid elétrico em tempo real.
-
----
-
 ## 📜 Licença
 
-Este projeto é desenvolvido para fins exclusivamente acadêmicos e pedagógicos no âmbito da disciplina de **Linguagem de Programação II** do **Instituto Federal Goiano**.
+Este projeto é desenvolvido para fins exclusivamente acadêmicos e pedagógicos no âmbito da disciplina de **Linguagem de Programação II**.

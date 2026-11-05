@@ -10,7 +10,6 @@
 
 <br>
 
-<<<<<<< HEAD
 **Autores:**  
 Henrique Gabriel Barbosa Guida Rodrigues,  
 Guilherme Meira de Melo,  
@@ -19,23 +18,9 @@ Philipy Dekam Silva de Oliveira,
 Vinícius Soares de Melo,  
 Jeanderson Honorato de Souza  
 
-**Instituição:** Instituto Federal Goiano (IF Goiano)  
-**Disciplina:** Linguagem de Programação II (LP2)  
-=======
-**Autores:** Henrique Gabriel Barbosa Guida Rodrigues
-             Guilherme Meira de Melo 
-             Lara Antonia Marques Oliveira, 
-             Philipy Dekam Silva de Oliveira, 
-             Vinícius Soares de Melo e Jeanderson Honorato de Souza
-
 ---
 
 **Disciplina:** Linguagem de Programação II
-
----
-
->>>>>>> a5630c1e1b8449829f17542e9ae711f91796590a
-**Projeto:** Projeto Final - Sistema de Gestão de Smart Grid e Tarifação Ecológica (EcoTarifa)  
 
 ---
 

@@ -1,3 +1,8 @@
+/* ============================================================================
+ * VERSÃO OFICIAL - MEMBRO 4 (Henrique Gabriel) - Desenvolvedor JDBC
+ * Depende de: ConnectionFactory (Membro 3), MedidorIndustrial (Membro 2)
+ *             e BandeiraTarifaria (Membro 1)
+ * ============================================================================ */
 package br.edu.ifgoiano.smartgrid.dao;
 
 import br.edu.ifgoiano.smartgrid.model.BandeiraTarifaria;
@@ -11,7 +16,35 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Classe de Acesso a Dados (DAO) responsável pela persistência de
+ * {@link MedidorIndustrial} no banco de dados H2 via JDBC.
+ * <p>
+ * Implementa as operações de criação de esquema e CRUD utilizando
+ * {@link PreparedStatement} para prevenção contra SQL Injection e controle
+ * manual de transações ({@code commit} / {@code rollback}) para garantir a
+ * atomicidade entre a tabela base {@code medidor} e a tabela especializada
+ * {@code medidor_industrial}.
+ *
+ * <pre>
+ * ConsumoDAOJBC dao = new ConsumoDAOJBC();
+ * dao.criarTabelas();
+ * dao.salvar(medidorIndustrial);
+ * List&lt;MedidorIndustrial&gt; todos = dao.buscarTodos();
+ * </pre>
+ *
+ * @author Henrique Gabriel Barbosa Guida Rodrigues
+ * @version 1.0
+ */
 public class ConsumoDAOJBC {
+
+    /**
+     * Cria as tabelas {@code medidor} (superclasse) e {@code medidor_industrial}
+     * (subclasse com chave estrangeira) no banco de dados H2, caso ainda não existam.
+     *
+     * @throws RuntimeException se ocorrer uma falha de SQL durante a criação das tabelas
+     */
+    // Parte do membro 3: estrutura DDL do banco H2
     public void criarTabelas() {
         String sqlMedidor = "CREATE TABLE IF NOT EXISTS medidor ("
                 + "mac_address VARCHAR(17) PRIMARY KEY, "
@@ -38,6 +71,18 @@ public class ConsumoDAOJBC {
 
     }
 
+    /**
+     * Persiste um {@link MedidorIndustrial} no banco de dados dentro de uma
+     * transação única.
+     * <p>
+     * Insere primeiro os dados gerais na tabela {@code medidor} e, em seguida,
+     * os dados específicos na tabela {@code medidor_industrial}. Caso qualquer
+     * uma das inserções falhe, é executado {@code rollback} para manter a
+     * integridade referencial.
+     *
+     * @param medidor instância de {@link MedidorIndustrial} a ser cadastrada
+     * @throws RuntimeException se ocorrer erro de SQL durante a inserção
+     */
     public void salvar(MedidorIndustrial medidor) {
         String slqPapai = "INSERT INTO medidor (mac_address, endereco, tensao_atual, status_operacional) VALUES (?, ?, ?, ?)";
 
@@ -98,6 +143,14 @@ public class ConsumoDAOJBC {
         }
     }
 
+    /**
+     * Consulta e retorna todos os medidores industriais cadastrados no banco,
+     * realizando {@code INNER JOIN} entre as tabelas {@code medidor} e
+     * {@code medidor_industrial}.
+     *
+     * @return lista de {@link MedidorIndustrial} (vazia caso não haja registros)
+     * @throws RuntimeException se ocorrer erro de SQL durante a consulta
+     */
     public List<MedidorIndustrial> buscarTodos() {
         List<MedidorIndustrial> medidores = new ArrayList<>();
 
@@ -125,6 +178,13 @@ public class ConsumoDAOJBC {
         return medidores;
     }
 
+    /**
+     * Busca um {@link MedidorIndustrial} específico a partir do seu endereço MAC.
+     *
+     * @param macAddress endereço MAC único do medidor (ex.: {@code "00:1B:44:11:3A:B7"})
+     * @return o {@link MedidorIndustrial} correspondente, ou {@code null} se não encontrado
+     * @throws RuntimeException se ocorrer erro de SQL durante a busca
+     */
     public MedidorIndustrial buscarPorMac(String macAddress) {
         String sql = "SELECT m.mac_address, m.endereco, mi.consumo_kwh, mi.fator_demanda, mi.bandeira_tarifaria "
                 + "FROM medidor m "
@@ -153,6 +213,15 @@ public class ConsumoDAOJBC {
         return null;
     }
 
+    /**
+     * Atualiza o consumo em kWh e a bandeira tarifária de um medidor industrial
+     * já cadastrado no banco de dados.
+     *
+     * @param macAddress            endereço MAC do medidor a ser atualizado
+     * @param novoConsumo           novo valor de consumo mensal em kWh
+     * @param novoBandeiraTarifaria nova {@link BandeiraTarifaria} vigente
+     * @throws RuntimeException se ocorrer erro de SQL durante a atualização
+     */
     public void atualizarConsumo(String macAddress, double novoConsumo, BandeiraTarifaria novoBandeiraTarifaria) {
         String sql = "UPDATE medidor_industrial SET consumo_kwh = ?, bandeira_tarifaria = ? WHERE mac_address = ?";
 

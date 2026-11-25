@@ -98,13 +98,13 @@ sistema-smart-grid/
         │   │       │   ├── ConnectionFactory.java   # ⚠️ PROVISÓRIO — Fábrica de conexões JDBC/H2 (Vinícius)
         │   │       │   └── ConsumoDAOJBC.java       # criarTabelas() → Vinícius | salvar/buscar → Henrique Gabriel ✅
         │   │       ├── exception/
-        │   │       │   └── RegraTarifacaoException.java  # ⚠️ PROVISÓRIO — Exceção personalizada (Philipy)
+        │   │       │   └── RegraTarifacaoException.java  # Exceção personalizada (Philipy) ✅
         │   │       ├── model/
-        │   │       │   ├── BandeiraTarifaria.java   # ⚠️ PROVISÓRIO — Enum de bandeiras tarifárias (Lara)
-        │   │       │   ├── CalculadoraTarifaria.java # ⚠️ PROVISÓRIO — Interface de cálculo de fatura (Philipy)
-        │   │       │   ├── MedidorInteligente.java  # ⚠️ PROVISÓRIO — Superclasse abstrata dos medidores (Lara)
-        │   │       │   ├── MedidorIndustrial.java   # ⚠️ PROVISÓRIO — Medidor para consumo industrial (Philipy)
-        │   │       │   └── MedidorResidencial.java  # ⚠️ PROVISÓRIO — Medidor para consumo residencial (Philipy)
+        │   │       │   ├── BandeiraTarifaria.java   # Enum de bandeiras tarifárias (Lara) ✅
+        │   │       │   ├── CalculadoraTarifaria.java # Interface de cálculo de fatura (Philipy) ✅
+        │   │       │   ├── MedidorInteligente.java  # Superclasse abstrata dos medidores (Lara) ✅
+        │   │       │   ├── MedidorIndustrial.java   # Medidor para consumo industrial (Philipy) ✅
+        │   │       │   └── MedidorResidencial.java  # Medidor para consumo residencial e solar (Philipy) ✅
         │   │       └── view/
         │   │           └── MainView.java            # 🔴 Em desenvolvimento — Integração geral (Jeanderson)
         │   └── resources/
@@ -204,8 +204,8 @@ Cada membro da equipe é responsável por arquivos `.java` distintos, evitando c
 
 | # | Membro | Papel | Arquivos sob responsabilidade | Status |
 | :---: | :--- | :--- | :--- | :---: |
-| 1 | **Lara** | Arquiteta de Domínio | `model/MedidorInteligente.java`, `model/BandeiraTarifaria.java` | 🟡 Provisório |
-| 2 | **Philipy** | Especialista em Polimorfismo | `model/CalculadoraTarifaria.java`, `model/MedidorResidencial.java`, `model/MedidorIndustrial.java`, `exception/RegraTarifacaoException.java` | 🟡 Provisório |
+| 1 | **Lara** | Arquiteta de Domínio | `model/MedidorInteligente.java`, `model/BandeiraTarifaria.java` | 🟢 Implementado |
+| 2 | **Philipy** | Especialista em Polimorfismo | `model/CalculadoraTarifaria.java`, `model/MedidorResidencial.java`, `model/MedidorIndustrial.java`, `exception/RegraTarifacaoException.java` | 🟢 Implementado |
 | 3 | **Vinícius** | Engenheiro H2 | `dao/ConnectionFactory.java`, método `criarTabelas()` em `ConsumoDAOJBC` | 🟡 Provisório |
 | 4 | **Henrique Gabriel** | Desenvolvedor JDBC | Métodos `salvar()`, `buscarTodos()`, `buscarPorMac()` e `atualizarConsumo()` em `ConsumoDAOJBC` | 🟢 Implementado |
 | 5 | **Guilherme** | Mago das Streams API | `controller/TarifacaoService.java` (filtros e regras de negócio) | 🔴 Em desenvolvimento |

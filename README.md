@@ -113,9 +113,6 @@ sistema-smart-grid/
             └── java/                                # Testes unitários automatizados
 ```
 
-> [!WARNING]
-> Os arquivos marcados com **⚠️ PROVISÓRIO** são stubs temporários criados para permitir compilação e testes do DAO enquanto os respectivos membros não entregam suas implementações oficiais. **Não substituir manualmente** — aguardar o envio via Pull Request.
-
 ---
 
 ## 🔗 Diagrama de Classes (Visão Geral)
@@ -223,15 +220,6 @@ Cada membro da equipe é responsável por arquivos `.java` distintos, evitando c
 | **Fase 1** | Criação do esqueleto do projeto, pacotes e stubs provisórios | Juntos | ✅ Concluído |
 | **Fase 2** | Desenvolvimento paralelo — cada membro implementa seus arquivos | Separado | Semanas 1–2 |
 | **Fase 3** | Grande Integração: merge, testes, correção de bugs e gravação do vídeo pitch | Juntos (Discord) | 22–25 Nov |
-
-> [!IMPORTANT]
-> **Fase 3 — Checklist de Integração:**
-> - [ ] Todos os membros abriram Pull Request com seus arquivos finais
-> - [ ] Jeanderson (Membro 6) fez o merge e rodou `MainView` com sucesso
-> - [ ] Banco H2 criou as tabelas sem erros
-> - [ ] `TarifacaoService` filtrou e somou os dados corretamente
-> - [ ] Relatório impresso no console sem exceções
-> - [ ] Vídeo pitch gravado (6 partes, uma por membro)
 
 ---
 

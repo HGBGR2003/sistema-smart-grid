@@ -1,6 +1,3 @@
-/* ============================================================================
- * VERSÃO OFICIAL - MEMBRO 2 (Philipy) - Especialista em Polimorfismo
- * ============================================================================ */
 package br.edu.ifgoiano.smartgrid.exception;
 
 /**

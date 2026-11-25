@@ -1,7 +1,3 @@
-/* ============================================================================
- * VERSÃO OFICIAL - MEMBRO 2 (Philipy) - Especialista em Polimorfismo
- * Depende de: MedidorInteligente e BandeiraTarifaria (Parte do membro 1)
- * ============================================================================ */
 package br.edu.ifgoiano.smartgrid.model;
 
 import br.edu.ifgoiano.smartgrid.exception.RegraTarifacaoException;
@@ -90,7 +86,10 @@ public class MedidorIndustrial extends MedidorInteligente implements Calculadora
         if (bandeira == null) {
             throw new RegraTarifacaoException("Erro: A bandeira tarifária não foi informada!");
         }
-        // Parte do membro 1: getTensaoAtual() vem da superclasse MedidorInteligente
+        // Parte do membro 1: getTensaoAtual() e isAtivo() vêm da superclasse MedidorInteligente
+        if (!isAtivo()) {
+            throw new RegraTarifacaoException("Erro: O medidor industrial está com o disjuntor virtual desligado!");
+        }
         double tensao = getTensaoAtual();
         if (tensao < TENSAO_MINIMA || tensao > TENSAO_MAXIMA) {
             throw new RegraTarifacaoException("Erro: Tensão fora do limite seguro (" + tensao

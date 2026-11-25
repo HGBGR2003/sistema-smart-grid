@@ -1,8 +1,3 @@
-/* ============================================================================
- * VERSÃO OFICIAL - MEMBRO 4 (Henrique Gabriel) - Desenvolvedor JDBC
- * Depende de: ConnectionFactory (Membro 3), MedidorIndustrial (Membro 2)
- *             e BandeiraTarifaria (Membro 1)
- * ============================================================================ */
 package br.edu.ifgoiano.smartgrid.dao;
 
 import br.edu.ifgoiano.smartgrid.model.BandeiraTarifaria;

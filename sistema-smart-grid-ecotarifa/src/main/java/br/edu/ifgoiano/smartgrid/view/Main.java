@@ -1,7 +1,10 @@
 package br.edu.ifgoiano.smartgrid.view;
 
+/**
+ * Classe auxiliar de inicialização que delega a execução para {@link MainView}.
+ */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Olá, Projeto Final - Linguagem de Programação 2");
+        MainView.main(args);
     }
 }

@@ -3,11 +3,14 @@ setlocal
 chcp 65001 >nul
 cd /d "%~dp0"
 
-where java >nul 2>nul
+where javaw >nul 2>nul
 if errorlevel 1 (
-  echo Instale o JDK 21 ou mais recente e abra este arquivo novamente.
-  pause
-  exit /b 1
+  where java >nul 2>nul
+  if errorlevel 1 (
+    echo Instale o JDK 21 ou mais recente e abra este arquivo novamente.
+    pause
+    exit /b 1
+  )
 )
 
 if exist "dist\smart-grid-ecotarifa.jar" (
@@ -23,6 +26,6 @@ if exist "dist\smart-grid-ecotarifa.jar" (
 if errorlevel 1 (
   echo.
   echo Ocorreu um erro ao executar o sistema. Verifique a versao com java -version.
+  pause
+  exit /b 1
 )
-echo.
-pause

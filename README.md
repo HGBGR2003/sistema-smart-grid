@@ -93,9 +93,9 @@ sistema-smart-grid/
         │   ├── java/
         │   │   └── br/edu/ifgoiano/smartgrid/
         │   │       ├── controller/
-        │   │       │   └── TarifacaoService.java    # 🔴 Em desenvolvimento — Streams API e regras de negócio (Guilherme)
+        │   │       │   └── TarifacaoService.java    # Streams API, filtros e regras de negócio (Guilherme) ✅
         │   │       ├── dao/
-        │   │       │   ├── ConnectionFactory.java   # ⚠️ PROVISÓRIO — Fábrica de conexões JDBC/H2 (Vinícius)
+        │   │       │   ├── ConnectionFactory.java   # Fábrica de conexões JDBC/H2 (Vinícius) ✅
         │   │       │   └── ConsumoDAOJBC.java       # criarTabelas() → Vinícius | salvar/buscar → Henrique Gabriel ✅
         │   │       ├── exception/
         │   │       │   └── RegraTarifacaoException.java  # Exceção personalizada (Philipy) ✅
@@ -206,9 +206,9 @@ Cada membro da equipe é responsável por arquivos `.java` distintos, evitando c
 | :---: | :--- | :--- | :--- | :---: |
 | 1 | **Lara** | Arquiteta de Domínio | `model/MedidorInteligente.java`, `model/BandeiraTarifaria.java` | 🟢 Implementado |
 | 2 | **Philipy** | Especialista em Polimorfismo | `model/CalculadoraTarifaria.java`, `model/MedidorResidencial.java`, `model/MedidorIndustrial.java`, `exception/RegraTarifacaoException.java` | 🟢 Implementado |
-| 3 | **Vinícius** | Engenheiro H2 | `dao/ConnectionFactory.java`, método `criarTabelas()` em `ConsumoDAOJBC` | 🟡 Provisório |
+| 3 | **Vinícius** | Engenheiro H2 | `dao/ConnectionFactory.java`, método `criarTabelas()` em `ConsumoDAOJBC` | 🟢 Implementado |
 | 4 | **Henrique Gabriel** | Desenvolvedor JDBC | Métodos `salvar()`, `buscarTodos()`, `buscarPorMac()` e `atualizarConsumo()` em `ConsumoDAOJBC` | 🟢 Implementado |
-| 5 | **Guilherme** | Mago das Streams API | `controller/TarifacaoService.java` (filtros e regras de negócio) | 🔴 Em desenvolvimento |
+| 5 | **Guilherme** | Mago das Streams API | `controller/TarifacaoService.java` (filtros e regras de negócio) | 🟢 Implementado |
 | 6 | **Jeanderson** | Tech Lead / Integrador | `view/MainView.java` (integração geral + Javadoc de todos os arquivos) | 🔴 Em desenvolvimento |
 
 > [!NOTE]

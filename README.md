@@ -217,7 +217,6 @@ classDiagram
 ```text
 sistema-smart-grid/
 ├── README.md                                          # Documentação principal do repositório
-├── guia-integracao-jeanderson.html                    # Guia HTML de integração e execução
 └── sistema-smart-grid-ecotarifa/                      # Módulo do projeto Java com Maven
     ├── pom.xml                                        # Maven + H2 + Shade (JAR executável) + Javadoc
     ├── executar.bat                                   # Atalho executável para Windows (GUI / --console)
@@ -238,9 +237,9 @@ sistema-smart-grid/
             │   │   ├── CalculadoraTarifaria.java      # Interface polimórfica de fatura (Philipy) ✅
             │   │   ├── MedidorInteligente.java        # Superclasse abstrata dos medidores (Lara) ✅
             │   │   ├── MedidorIndustrial.java         # Medidor industrial (Philipy) ✅
-            │   │   └── MedidorResidencial.java        # Medidor residencial / prossumidor solar (Philipy) ✅
+            │   │   └── MedidorResidencial.java        # Medidor residencial / Prossumidor solar (Philipy) ✅
             │   └── view/
-            │       ├── MainView.java                  # Interface Swing + modo console (Jeanderson) ✅
+            │       ├── MainView.java                  # Interface Swing + Modo console (Jeanderson) ✅
             │       └── Main.java                      # Classe auxiliar de entrada (Jeanderson) ✅
             └── resources/
                 └── .gitkeep
@@ -314,16 +313,6 @@ mvn clean package
 ```bash
 mvn javadoc:javadoc
 ```
-
----
-
-## 📅 Cronograma do Projeto
-
-| Fase | Atividade | Formato | Status |
-| :---: | :--- | :---: | :---: |
-| **Fase 1** | Criação do esqueleto do projeto, pacotes e stubs provisórios | Juntos | ✅ Concluído |
-| **Fase 2** | Desenvolvimento paralelo — cada membro implementa seus arquivos | Separado | ✅ Concluído |
-| **Fase 3** | Grande Integração: merge, testes, correção de bugs e gravação do vídeo pitch | Juntos (Discord) | ✅ Concluído |
 
 ---
 

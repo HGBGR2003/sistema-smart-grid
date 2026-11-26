@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <img src="https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge" alt="Status" />
   <img src="https://img.shields.io/badge/Java-25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 25" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven" />
   <img src="https://img.shields.io/badge/H2_Database-In--Memory-003545?style=for-the-badge&logo=h2&logoColor=white" alt="H2" />
@@ -19,8 +19,6 @@ Philipy Dekam Silva de Oliveira,
 Vinícius Soares de Melo,
 Jeanderson Honorato de Souza
 
----
-
 **Disciplina:** Linguagem de Programação II
 
 ---
@@ -31,20 +29,17 @@ O **Sistema Smart Grid & EcoTarifa** é uma solução computacional orientada a 
 
 O sistema abrange desde a **telemetria bidirecional** de medidores inteligentes de energia (*Smart Meters*) até a integração de **microgeração distribuída (energia solar fotovoltaica)** e a aplicação de modelos de faturamento sustentável (**EcoTarifa**), promovendo eficiência energética, segurança operacional da rede e incentivo à sustentabilidade com compensação de créditos (*Net Metering*).
 
-> [!NOTE]
-> Algumas classes do projeto encontram-se em **versão provisória (stub)**, sinalizadas por comentários `VERSÃO PROVISÓRIA` no topo de cada arquivo, aguardando as implementações oficiais dos respectivos membros da equipe. Essas versões garantem a compilação e os testes do DAO enquanto as implementações finais não são integradas.
-
 ---
 
 ## 🚀 Funcionalidades Principais
 
 - 📡 **Telemetria de Medição Inteligente:**
-  - Registro de consumo ativo de energia elétrica ($\text{kWh}$).
+  - Registro de consumo ativo de energia elétrica (kWh).
   - Registro e contabilização da injeção de excedentes de energia solar fotovoltaica na rede elétrica.
   - Identificação unívoca de cada medidor por endereço físico (MAC Address).
 
 - 🛡️ **Segurança e Proteção da Rede Elétrica:**
-  - Monitoramento contínuo dos níveis de tensão elétrica em regime nominal e dinâmico ($\text{Volts}$).
+  - Monitoramento contínuo dos níveis de tensão elétrica em regime nominal e dinâmico (Volts).
   - Proteção automática com acionamento de corte (*disjuntor virtual*) contra sobretensão e subtensão fora dos limiares seguros.
   - Monitoramento do tempo de resposta dos medidores via ping (`tempoRespostaPingMs`).
 
@@ -54,10 +49,10 @@ O sistema abrange desde a **telemetria bidirecional** de medidores inteligentes 
   - Suporte a medidores **residenciais** e **industriais** com cálculos tarifários distintos.
 
 - 📊 **Cálculo de Saldo Energético Líquido e Faturamento (EcoTarifa):**
-  - Balanço líquido de consumo: $\text{Saldo Líquido} = \text{Consumo Ativo} - \text{Injeção Solar}$.
+  - Balanço líquido de consumo: `Saldo Líquido = Consumo Ativo - Injeção Solar`.
   - Aplicação de **Bandeiras Tarifárias** com multiplicadores de acréscimo: Verde (×1,0), Amarela (×1,2) e Vermelha (×1,5).
   - Fator de demanda contratada aplicado na fatura de medidores industriais.
-  - Detecção automática de status da fatura: saldo devedor a pagar, saldo zerado ou geração de créditos energéticos em $\text{kWh}$.
+  - Detecção automática de status da fatura: saldo devedor a pagar, saldo zerado ou geração de créditos energéticos em kWh.
   - Emissão de relatórios consolidados de medição e faturamento para os clientes.
 
 - 🗄️ **Persistência de Dados (DAO + JDBC + H2):**
@@ -93,136 +88,21 @@ sistema-smart-grid/
         │   ├── java/
         │   │   └── br/edu/ifgoiano/smartgrid/
         │   │       ├── controller/
-        │   │       │   └── TarifacaoService.java    # Streams API, filtros e regras de negócio (Guilherme) ✅
+        │   │       │   └── TarifacaoService.java          # Streams API, filtros e regras de negócio (Guilherme) ✅
         │   │       ├── dao/
-        │   │       │   ├── ConnectionFactory.java   # Fábrica de conexões JDBC/H2 (Vinícius) ✅
-        │   │       │   └── ConsumoDAOJBC.java       # criarTabelas() → Vinícius | salvar/buscar → Henrique Gabriel ✅
+        │   │       │   ├── ConnectionFactory.java         # Fábrica de conexões JDBC/H2 (Vinícius) ✅
+        │   │       │   └── ConsumoDAOJBC.java             # criarTabelas() → Vinícius | salvar/buscar → Henrique Gabriel ✅
         │   │       ├── exception/
-        │   │       │   └── RegraTarifacaoException.java  # Exceção personalizada (Philipy) ✅
+        │   │       │   └── RegraTarifacaoException.java   # Exceção personalizada (Philipy) ✅
         │   │       ├── model/
-        │   │       │   ├── BandeiraTarifaria.java   # Enum de bandeiras tarifárias (Lara) ✅
-        │   │       │   ├── CalculadoraTarifaria.java # Interface de cálculo de fatura (Philipy) ✅
-        │   │       │   ├── MedidorInteligente.java  # Superclasse abstrata dos medidores (Lara) ✅
-        │   │       │   ├── MedidorIndustrial.java   # Medidor para consumo industrial (Philipy) ✅
-        │   │       │   └── MedidorResidencial.java  # Medidor para consumo residencial e solar (Philipy) ✅
+        │   │       │   ├── BandeiraTarifaria.java         # Enum de bandeiras tarifárias (Lara) ✅
+        │   │       │   ├── CalculadoraTarifaria.java      # Interface de cálculo de fatura (Philipy) ✅
+        │   │       │   ├── MedidorInteligente.java        # Superclasse abstrata dos medidores (Lara) ✅
+        │   │       │   ├── MedidorIndustrial.java         # Medidor para consumo industrial (Philipy) ✅
+        │   │       │   └── MedidorResidencial.java        # Medidor para consumo residencial e solar (Philipy) ✅
         │   │       └── view/
-        │   │           └── MainView.java            # 🔴 Em desenvolvimento — Integração geral (Jeanderson)
+        │   │           └── MainView.java                  # Integração geral e execução principal (Jeanderson) ✅
         │   └── resources/
-        │       └── .gitkeep                         # Placeholder do diretório de recursos
+        │       └── .gitkeep                               # Placeholder do diretório de recursos
         └── test/
-            └── java/                                # Testes unitários automatizados
-```
-
----
-
-## 🔗 Diagrama de Classes (Visão Geral)
-
-```
-           «interface»                        «enum»
-       CalculadoraTarifaria              BandeiraTarifaria
-       + calcularValorFatura()           VERDE  (×1.0)
-              ▲                         AMARELA (×1.2)
-              │ implements               VERMELHA(×1.5)
-              │
-   «abstract» MedidorInteligente «Serializable»
-   - macAddress: String
-   - endereco: String
-   - tensaoAtual: double
-   - statusOperacional: String
-   - transient tempoRespostaPingMs: long
-        ▲               ▲
-        │               │
-MedidorResidencial  MedidorIndustrial
-- consumoKwh        - consumoKwh
-- bandeira          - fatorDemandaContratada
-                    - bandeira
-
-        ConsumoDAOJBC ──uses──► ConnectionFactory (H2 in-memory)
-        TarifacaoService  (em desenvolvimento)
-```
-
----
-
-## 🛠️ Tecnologias e Ferramentas
-
-| Tecnologia | Finalidade |
-| :--- | :--- |
-| **Java 25+** | Linguagem de programação principal utilizada no desenvolvimento da lógica do sistema |
-| **Apache Maven** | Automação de compilação, gerenciamento de dependências e empacotamento do projeto |
-| **H2 Database 2.5.252** | Banco de dados relacional em memória para persistência e testes via JDBC |
-| **Git & GitHub** | Controle de versionamento de código e repositório remoto |
-| **IntelliJ IDEA / VS Code** | Ambientes de Desenvolvimento Integrado (IDE) |
-
----
-
-## ⚙️ Pré-requisitos
-
-Para compilar e executar o projeto localmente, certifique-se de possuir instalado em sua máquina:
-
-1. **Java Development Kit (JDK):** Versão 21 ou superior (projeto configurado com JDK 25).
-2. **Apache Maven:** Versão 3.8 ou superior.
-3. **Git:** Para clonagem e versionamento do repositório.
-
-Verifique as instalações através do terminal:
-```bash
-java -version
-mvn -version
-git --version
-```
-
----
-
-## 💻 Como Compilar e Executar
-
-### 1. Clonar o Repositório
-```bash
-git clone git@github.com:HGBGR2003/sistema-smart-grid.git
-cd sistema-smart-grid/sistema-smart-grid-ecotarifa
-```
-
-### 2. Compilar o Projeto com o Maven
-```bash
-mvn clean compile
-```
-
-### 3. Executar a Aplicação
-Via terminal com plugin exec do Maven:
-```bash
-mvn compile exec:java -Dexec.mainClass="br.edu.ifgoiano.smartgrid.view.MainView"
-```
-
-Ou diretamente executando a classe principal através de sua IDE favorita (abra a pasta `sistema-smart-grid-ecotarifa` como projeto Maven e execute o método `main` da classe `MainView` em `br.edu.ifgoiano.smartgrid.view`).
-
----
-
-## 👥 Divisão de Responsabilidades
-
-Cada membro da equipe é responsável por arquivos `.java` distintos, evitando conflitos durante o desenvolvimento paralelo.
-
-| # | Membro | Papel | Arquivos sob responsabilidade | Status |
-| :---: | :--- | :--- | :--- | :---: |
-| 1 | **Lara** | Arquiteta de Domínio | `model/MedidorInteligente.java`, `model/BandeiraTarifaria.java` | 🟢 Implementado |
-| 2 | **Philipy** | Especialista em Polimorfismo | `model/CalculadoraTarifaria.java`, `model/MedidorResidencial.java`, `model/MedidorIndustrial.java`, `exception/RegraTarifacaoException.java` | 🟢 Implementado |
-| 3 | **Vinícius** | Engenheiro H2 | `dao/ConnectionFactory.java`, método `criarTabelas()` em `ConsumoDAOJBC` | 🟢 Implementado |
-| 4 | **Henrique Gabriel** | Desenvolvedor JDBC | Métodos `salvar()`, `buscarTodos()`, `buscarPorMac()` e `atualizarConsumo()` em `ConsumoDAOJBC` | 🟢 Implementado |
-| 5 | **Guilherme** | Mago das Streams API | `controller/TarifacaoService.java` (filtros e regras de negócio) | 🟢 Implementado |
-| 6 | **Jeanderson** | Tech Lead / Integrador | `view/MainView.java` (integração geral + Javadoc de todos os arquivos) | 🔴 Em desenvolvimento |
-
-> [!NOTE]
-> Os arquivos marcados como **🟡 Provisório** são stubs temporários que garantem a compilação enquanto as versões oficiais não são integradas. **Não substituir manualmente** — aguardar envio via Pull Request do membro responsável.
-
----
-
-## 📅 Cronograma do Projeto
-
-| Fase | Atividade | Formato | Prazo |
-| :---: | :--- | :---: | :---: |
-| **Fase 1** | Criação do esqueleto do projeto, pacotes e stubs provisórios | Juntos | ✅ Concluído |
-| **Fase 2** | Desenvolvimento paralelo — cada membro implementa seus arquivos | Separado | Semanas 1–2 |
-| **Fase 3** | Grande Integração: merge, testes, correção de bugs e gravação do vídeo pitch | Juntos (Discord) | 22–25 Nov |
-
----
-
-## 📜 Licença
-
-Este projeto é desenvolvido para fins exclusivamente acadêmicos e pedagógicos no âmbito da disciplina de **Linguagem de Programação II**.
+            └── java/                                      # Testes unitários automatizados

@@ -39,7 +39,7 @@ public class ConsumoDAOJBC {
      *
      * @throws RuntimeException se ocorrer uma falha de SQL durante a criação das tabelas
      */
-    // Parte do membro 3: estrutura DDL do banco H2
+    
     public void criarTabelas() {
         String sqlMedidor = "CREATE TABLE IF NOT EXISTS medidor ("
                 + "mac_address VARCHAR(17) PRIMARY KEY, "
